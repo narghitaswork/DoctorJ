@@ -706,7 +706,67 @@ h1, h2, h3, h4 {
     opacity: 1;
     transform: translateX(0);
 }
+/* ============ MOTTO PARALLAX SECTION ============ */
+.motto-section {
+    position: relative;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
+.motto-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/doctor-surgery.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Fallback pentru iOS (nu suportă background-attachment: fixed) */
+@supports (-webkit-touch-callout: none) {
+    .motto-bg {
+        background-attachment: scroll;
+    }
+}
+
+.motto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.88) 0%, rgba(45, 58, 79, 0.85) 100%);
+}
+
+.motto-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.motto-quote {
+    font-family: var(--font-hand);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+.motto-author {
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-green-light);
+    margin: 0;
+}
 /* ============ RESPONSIVE - TABLET ============ */
 @media (max-width: 1024px) {
     .hero-container {
