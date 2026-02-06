@@ -611,7 +611,117 @@
             margin: 0;
             font-weight: 400;
         }
+/* ============ SERVICII SECTION ============ */
+.servicii {
+    padding: 100px 0;
+    background: var(--off-white);
+}
 
+.servicii-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.servicii-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.servicii-header h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.servicii-header h2 span {
+    font-style: italic;
+    color: var(--slate);
+}
+
+.section-divider.centered {
+    margin: 1rem auto;
+}
+
+.servicii-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.serviciu-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.3s var(--ease);
+    position: relative;
+}
+
+.serviciu-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--gold-green);
+    transform: scaleY(0);
+    transition: transform 0.3s var(--ease);
+}
+
+.serviciu-card:hover {
+    border-color: var(--border-light);
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+.serviciu-card:hover::before {
+    transform: scaleY(1);
+}
+
+.serviciu-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.serviciu-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--gold-green);
+    stroke-width: 1;
+}
+
+.serviciu-card h3 {
+    flex: 1;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin: 0;
+}
+
+.serviciu-arrow {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s var(--ease);
+}
+
+.serviciu-arrow svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--gold-green);
+    stroke-width: 1.5;
+}
+
+.serviciu-card:hover .serviciu-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
         /* ============ RESPONSIVE ============ */
         @media (max-width: 1024px) {
             .hero-container {
@@ -711,6 +821,17 @@
             .despre-quote p {
                 font-size: 1.15rem;
             }
+            .servicii {
+    padding: 60px 0;
+}
+
+.servicii-header {
+    margin-bottom: 2.5rem;
+}
+
+.servicii-grid {
+    grid-template-columns: 1fr;
+}
         }
 
         @media (max-width: 480px) {
