@@ -1555,17 +1555,18 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        right: 0;
         z-index: 1100;
         background: var(--white);
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(200, 187, 168, 0.35);
     }
 
     .nav-menu.active {
@@ -2066,6 +2067,11 @@ h1, h2, h3, h4 {
 
     .info-cards-grid {
         grid-template-columns: 1fr;
+    }
+
+    .page-cta .btn {
+        display: block;
+        margin: 0.75rem auto;
     }
 }
 
